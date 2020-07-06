@@ -4,14 +4,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @Entity
+@SequenceGenerator(name = "id_gen", sequenceName = "id_gen",  initialValue = 6)
 public class Estudante {
 	
 	@Id
-	@GeneratedValue(strategy= GenerationType.AUTO)
+	@GeneratedValue(strategy= GenerationType.AUTO, generator = "id_gen")
 	private Long id;
 	
 	@NotBlank(message = "Nome é obrigatório")
