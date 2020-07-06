@@ -35,7 +35,7 @@ public class EstudanteController {
 
 	// Adicionar Estudante
 	@PostMapping("add") 
-	public String adicionarEstudante(Estudante estudante, BindingResult result, Model model) {
+	public String adicionarEstudante(@Valid Estudante estudante, BindingResult result, Model model) {
 		
 		if (result.hasErrors()) { 
 			return "cadastrar-estudante"; 
